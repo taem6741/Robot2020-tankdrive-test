@@ -17,10 +17,10 @@ package frc.robot;
  */
 public final class Constants {
     // motor controllers
-    public static final int LEFT_TALON_ID;
-    public static final int RIGHT_TALON_ID;
+    public static final int LEFT_TALON_ID = 0;
+    public static final int RIGHT_TALON_ID = 0;
 
     // joysticks + buttons
-    public static final int LEFT_JSTICK;
-    public static final int RIGHT_JSTICK;
+    public static final int LEFT_JSTICK = 0;
+    public static final int RIGHT_JSTICK = 0;
 }
