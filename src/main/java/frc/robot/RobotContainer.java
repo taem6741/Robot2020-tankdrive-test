@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.RoboDrive;
-import frc.robot.Constants;
 // import edu.wpi.first.wpilibj2.command.Command;
+// This is commented because I might need this later amd I can't be bothered to find it
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -22,6 +22,7 @@ import frc.robot.Constants;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+  // Joysticks
   private final Joystick m_leftJstick = new Joystick(Constants.LEFT_JSTICK);
   private final Joystick m_rightJstick = new Joystick(Constants.RIGHT_JSTICK);
   // The robot's subsystems and commands are defined here...
@@ -48,6 +49,7 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    // nothing here, this is super useful always but I have literally nothing to put here yet
   }
 
 

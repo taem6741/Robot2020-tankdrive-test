@@ -16,16 +16,16 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class TankDrive extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final RoboDrive m_driver;
-  private final Joystick m_leftJstick;
-  private final Joystick m_rightJstick;
+  private final RoboDrive m_driver; //The robot's drive
+  private final Joystick m_leftJstick; // Left joystick
+  private final Joystick m_rightJstick; // Right joystick
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public TankDrive(RoboDrive drive, Joystick L_stick, Joystick R_stick) {
+  public TankDrive(final RoboDrive drive, final Joystick L_stick, final Joystick R_stick) {
     m_driver = drive;
     m_leftJstick = L_stick;
     m_rightJstick = R_stick;
@@ -36,23 +36,24 @@ public class TankDrive extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_driver.resetMotors();
+    m_driver.resetMotors(); // Starts with motors on 0
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_driver.tankDrive(m_leftJstick.getY(), m_rightJstick.getY());
+    m_driver.tankDrive(m_leftJstick.getY(), m_rightJstick.getY()); // Uses the joysticks to get input for driving
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
+  public void end(final boolean interrupted) {
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return false; // Command does not need to finish, it will be automatically interrupted
+                  // once the subsystem is required for a different command
   }
 }

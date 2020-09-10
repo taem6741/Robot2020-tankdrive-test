@@ -15,6 +15,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import frc.robot.Constants;
 
 public class RoboDrive extends SubsystemBase {
+  // Motor controllers
   private final TalonSRX m_leftMotorTalon = new TalonSRX(Constants.LEFT_TALON_ID);
   private final VictorSPX m_leftMotorVictor = new VictorSPX(Constants.LEFT_VICTOR_ID);
   private final VictorSPX m_rightMotorVictor = new VictorSPX(Constants.RIGHT_VICTOR_ID);
@@ -24,6 +25,7 @@ public class RoboDrive extends SubsystemBase {
    * Creates a new ExampleSubsystem.
    */
   public RoboDrive() {
+    // Setup for motors
     m_leftMotorTalon.setInverted(true);
     m_leftMotorVictor.setInverted(true);
     m_leftMotorTalon.setNeutralMode(NeutralMode.Brake);
@@ -32,6 +34,7 @@ public class RoboDrive extends SubsystemBase {
     m_rightMotorVictor.setNeutralMode(NeutralMode.Brake);
   }
 
+  // Gets joystick input and sets motor speed accordingly
   public void tankDrive(double left_y, double right_y) {
     m_leftMotorTalon.set(ControlMode.PercentOutput, left_y);
     m_rightMotorTalon.set(ControlMode.PercentOutput, right_y);
@@ -39,6 +42,7 @@ public class RoboDrive extends SubsystemBase {
     m_rightMotorVictor.set(ControlMode.PercentOutput, right_y);
   }
 
+  // Stops all motors
   public void resetMotors() {
     m_leftMotorTalon.set(ControlMode.PercentOutput, 0);
     m_rightMotorTalon.set(ControlMode.PercentOutput, 0);
